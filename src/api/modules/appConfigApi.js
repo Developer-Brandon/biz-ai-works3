@@ -9,7 +9,17 @@ import { getEndpoint } from "@/utils/common";
  */
 async function fetchAppInfo(office) {
   const endpoint = getEndpoint("/api/app/info", "/api/app/info");
-  const response = http.post(endpoint, { office });
+  const response = await http.post(endpoint, { office });
+
+  console.log("appConfigApi.js - fetchAppInfo - response:", response);
+
+  if (!response.success) {
+    const error = new Error(response.message || "Failed to fetch app info");
+    error.code = response.code;
+    error.status = response.status;
+    throw error;
+  }
+
   return response;
 }
 

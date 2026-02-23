@@ -184,7 +184,10 @@ export const useConfigStore = defineStore(
       try {
         // fallbackMode에 의한 설정
         const fallBackMode = toBoolean(import.meta.env.VITE_FALLBACK_MODE);
-        console.log("fetchConfig:fallBackMode:", fallBackMode);
+        console.log(
+          "userConfigStore.js - fetchConfig - fallBackMode:",
+          fallBackMode,
+        );
         let data;
         if (fallBackMode) {
           data = await getMockConfigData("KT-DS", testAuthStore);
@@ -193,13 +196,16 @@ export const useConfigStore = defineStore(
           data = await appConfigApi.fetchAppInfo(office);
         }
         serverConfig.value = data;
-        console.log("serverConfig.value:", serverConfig.value);
+        console.log(
+          "userConfigStore.js - fetchConfig - serverConfig.value:",
+          serverConfig.value,
+        );
         applyThemeToDOM();
         console.log("✅ Config loaded");
         return data;
       } catch (err) {
         error.value = err?.message || "Config load failed";
-        console.error(err);
+        console.error("userConfigStore.js - fetchConfig - error:", err);
         throw err;
       }
     }
