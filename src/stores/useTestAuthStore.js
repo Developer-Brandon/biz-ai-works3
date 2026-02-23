@@ -27,6 +27,14 @@ export const useTestAuthStore = defineStore("test-auth", () => {
         testEmailList = ["krc@demo.co.kr"];
         break;
 
+      case "hira":
+        testEmailList = ["hira@demo.co.kr"];
+        break;
+
+      case "kogas":
+        testEmailList = ["kogas@demo.co.kr"];
+        break;
+
       default:
         testEmailList = [];
         testPassword.value = "";
