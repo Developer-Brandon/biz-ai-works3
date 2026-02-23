@@ -49,27 +49,6 @@
         관리자에게 문의해 주세요.
       </p>
 
-      <!-- 버튼 그룹 -->
-      <div class="button-group">
-        <button @click="retryLoad" class="btn btn-retry">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M23 4v6h-6" />
-            <path d="M1 20v-6h6" />
-            <path
-              d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
-            />
-          </svg>
-          <span>다시 시도</span>
-        </button>
-      </div>
-
       <!-- 장식 요소들 -->
       <div class="decoration-dots">
         <span
@@ -299,79 +278,6 @@ const retryLoad = () => {
 @keyframes fadeIn {
   to {
     opacity: 1;
-  }
-}
-
-/* 버튼 그룹 */
-.button-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 1.4s forwards;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  background: transparent;
-  color: $white;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #333333;
-  border-radius: 25px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translate(-50%, -50%);
-    transition:
-      width 0.6s,
-      height 0.6s;
-  }
-
-  &:hover::before {
-    width: 300px;
-    height: 300px;
-  }
-
-  &:hover {
-    border-color: #666666;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  svg {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s;
-  }
-
-  /* 다시 시도 버튼 hover 시 아이콘 회전 */
-  &:hover svg {
-    transform: rotate(180deg);
-  }
-
-  span {
-    position: relative;
-    z-index: 1;
   }
 }
 
