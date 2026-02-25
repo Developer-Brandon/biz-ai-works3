@@ -11,25 +11,13 @@
 
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-import { useTestAuthStore } from "@/stores/useTestAuthStore";
 import { useConfigStore } from "@/stores/useConfigStore";
 import { INPUT_TAG_TYPES, STORAGE_KEYS } from "@/utils/constants";
-import agentApi from "../../../api/modules/agentApi";
 
 export const useAgentStore = defineStore(
   "agent",
   () => {
-    // ================================
     // STATE: Agent 정보
-    // ================================
-
-    /**
-     * AI Agent 목록
-     * 예: [
-     *   { id: 1, name: "Agent1", desc: "설명" },
-     *   { id: 2, name: "Agent2", desc: "설명" }
-     * ]
-     */
     const aiAgentInfoList = ref([]);
 
     /**
@@ -86,15 +74,7 @@ export const useAgentStore = defineStore(
       return aiAgentTagList.value.length > 0;
     });
 
-    // ================================
-    // ACTIONS: Agent 로드
-    // ================================
-
-    /**
-     * AI Agent 목록 로드
-     * - Mock 데이터 또는 API에서 조회
-     * - 서버 설정에서 Agent 정보 가져오기
-     */
+    // Agent 로드
     const loadAiAgentList = async () => {
       try {
         console.group("[AI Agent List] 데이터 로드 시작");

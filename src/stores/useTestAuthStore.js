@@ -16,11 +16,7 @@ export const useTestAuthStore = defineStore("test-auth", () => {
         break;
 
       case "komsco":
-        testEmailList = [
-          "komsco@demo.co.kr",
-          "komsco_dev@demo.co.kr",
-          "komsco_admin@demo.co.kr",
-        ];
+        testEmailList = ["komsco@demo.co.kr"];
         break;
 
       case "krc":
@@ -40,14 +36,7 @@ export const useTestAuthStore = defineStore("test-auth", () => {
         testPassword.value = "";
     }
 
-    const shuffled = [...testEmailList];
-
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    testRandomEmail.value = shuffled[0];
+    testRandomEmail.value = testEmailList[0];
   };
 
   return {
