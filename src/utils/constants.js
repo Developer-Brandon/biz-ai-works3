@@ -183,8 +183,8 @@ export const ENV = {
   BASE_API_URL: import.meta.env.VITE_API_URL,
   BASE_APP_NAME: import.meta.env.VITE_APP_NAME,
   IS_DEVELOPMENT: toBoolean(import.meta.env.VITE_DEV), // true = 로컬, false = 배포
-  LOGIN_PAGE_TITLE: "Biz.AI - 로그인",
-  MAIN_PAGE_TITLE: "Biz.AI - 메인",
+  LOGIN_PAGE_TITLE: "KOGAS Portal - 로그인",
+  MAIN_PAGE_TITLE: "KOGAS Portal - 메인",
 
   // ============================================================
   // ✅ [추가] Mixed Content 해결을 위한 백엔드 URL 설정

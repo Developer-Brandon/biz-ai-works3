@@ -22,7 +22,7 @@
       <div class="sidebar__logo">
         <img
           :src="logoImageUrl"
-          alt="Biz.AI Logo"
+          alt="KOGAS Portal Logo"
           class="sidebar__logo-image"
           @click="reloadPage"
         />

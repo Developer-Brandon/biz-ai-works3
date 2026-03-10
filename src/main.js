@@ -18,7 +18,7 @@ pinia.use(piniaPluginPersistedstate);
 app.use(pinia);
 app.use(router);
 /* ==================== 전역 프로퍼티 설정 ==================== */
-app.config.globalProperties.$appName = "Biz.AI";
+app.config.globalProperties.$appName = "KOGAS Portal";
 
 /* ==================== 애플리케이션 마운트 ==================== */
 /**
